@@ -54,4 +54,16 @@ module learning-switch-impl {
             }      
         }
     }
+    augment /odl-inv:nodes/odl-inv:node {
+       ext:augment-identifier "MacTable";
+       list hosts {
+           leaf mac-address {
+               type yang:mac-address;
+           }
+           leaf attachment-point {
+                //I choose simple one
+                type inet:uri;
+           }
+       }
+    }
 }
